@@ -1,0 +1,61 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    char str[1000];
+          char d[100];
+          int q = 0;
+          int s = 0;
+          int k = 0;
+          int g = 0;
+          int l = 0;
+
+       printf("请输入语句(在语句结束后请打上空格)\n");
+       gets(str);
+       l = strlen(str);
+
+       printf("请输入所要检索的单词\n");
+       gets(d);
+       g = strlen(d);
+
+for (int j = 0; j < g; j++)
+{
+
+	s = s + d[j];
+	
+}
+
+for (int i = 0; i <= l; i++)
+{
+	
+	if (str[i] == 32)
+	{
+		q = 0;
+	}
+
+	if (str[i] != 32)
+	{
+		q = q + str[i];
+
+		if (q == s)
+		{
+			if (str[i + 1] == 32)
+			{
+				k++;
+
+
+				
+			}
+		}
+
+	}
+
+}
+
+printf("%d\n", k);
+
+
+
+return 0;
+}
