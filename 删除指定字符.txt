@@ -1,0 +1,43 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+int main()
+   {
+	   char sarray[100];
+	   char ch;
+	   int a;
+	   int i;
+	   int f;
+
+	   printf("请输入一个字符串\n");
+	    gets(sarray);
+	   printf("请输入要删掉的字符\n");
+	   ch = getchar();
+
+	   a = strlen(sarray);
+	   for (i = 0; i < a; i++)
+	   {
+		   
+
+		   if (sarray[i] == ch)
+		   {
+			   sarray[i] = '\0';
+
+			   for (f=i; f < a; f++)
+			   {
+				   char t;
+
+				   t = sarray[f];
+				   sarray[f] = sarray[f + 1];
+				   sarray[f + 1] = t;
+
+			   }
+
+			   i -= i;
+		   }
+		  
+	   }
+
+	   printf("%s\n",sarray);
+         return 0;
+   }
